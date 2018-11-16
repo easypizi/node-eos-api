@@ -1,1 +1,1 @@
-# Node-EOS-API
+# Node-eospark-API
