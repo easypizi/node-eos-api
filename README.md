@@ -1,1 +1,1 @@
-# node-eos-api
+# Node-EOS-API
