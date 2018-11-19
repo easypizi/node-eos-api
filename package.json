@@ -1,0 +1,54 @@
+{
+    "name": "node-eospark-api",
+    "version": "0.1.2",
+    "description": "EOSpark API for Node.js",
+    "main": "./src/index.js",
+    "scripts": {
+      "test": "jest --coverage",
+      "test:watch": "jest --watchAll --coverage",
+      "doc": "jsdoc2md --files src/index.js --template docs/template.hbs > docs/API.md"
+    },
+    "types": "index.d.ts",
+    "jest": {
+      "testMatch": [
+        "<rootDir>/tests/**/*.js"
+      ]
+    },
+    "keywords": [
+      "eos",
+      "eospark",
+      "eospark-api",
+      "api",
+      "nodejs",
+      "ethereum on steroids",
+      "blockchain"
+    ],
+    "author": "Evan Tolstoff",
+    "license": "MIT",
+    "devDependencies": {
+      "eslint": "^4.18.1",
+      "eslint-config-prettier": "^2.9.0",
+      "eslint-config-standard": "^11.0.0",
+      "eslint-loader": "^1.9.0",
+      "eslint-plugin-import": "^2.9.0",
+      "eslint-plugin-node": "^6.0.1",
+      "eslint-plugin-prettier": "^2.6.0",
+      "eslint-plugin-promise": "^3.6.0",
+      "eslint-plugin-standard": "^3.0.1",
+      "jest": "^22.4.2",
+      "jsdoc-to-markdown": "^3.0.3"
+    },
+    "dependencies": {
+      "bignumber.js": "^6.0.0",
+      "request-promise": "^4.2.2"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/easypizi/node-eos-api.git"
+    },
+    "bugs": {
+      "url": "https://github.com/easypizi/node-eos-api/issues"
+    },
+    "homepage": "https://github.com/easypizi/node-eos-api"
+  }
+  
