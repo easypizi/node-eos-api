@@ -2,7 +2,7 @@ const MODULES = require('./constants/modules')
 const ACTIONS = require('./constants/actions')
 const createRequest = require('./utils/createRequest')
 
-class EosParkApi {
+class EosparkConnect {
   /**
    * @class EosPark Api
    * @constructor
@@ -236,4 +236,4 @@ class EosParkApi {
   }
 }
 
-module.exports = EosParkApi
+module.exports = EosparkConnect
