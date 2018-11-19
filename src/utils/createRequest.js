@@ -1,5 +1,5 @@
-const request = require("request-promise");
-const serializeObject = require("./serializeObject");
+const request = require('request-promise')
+const serializeObject = require('./serializeObject')
 
 /**
  * Creates request
@@ -8,20 +8,15 @@ const serializeObject = require("./serializeObject");
  * @return {any}
  */
 async function createRequest(host, params) {
-  const query = serializeObject(params);
-  const url = `${host}/api?${query}`;
-  const resp = await request(url);
-  const data = JSON.parse(resp);
-
-  if (data.error || data.result === null) {
-    const message = data.message
-      ? data.message
-      : (data.error && data.error.message) || data.error;
-
-    throw new Error(message);
+  const query = serializeObject(params)
+  const url = `${host}?${query}`
+  const resp = await request(url)
+  const result = JSON.parse(resp)
+  if (result.errno !== 0 || result.errmsg !== 'Success') {
+    const message = result.errmsg
+    throw new Error(message)
   }
-
-  return data.result;
+  return result.data
 }
 
-module.exports = createRequest;
+module.exports = createRequest

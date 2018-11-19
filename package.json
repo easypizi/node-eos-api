@@ -1,13 +1,13 @@
 {
   "name": "node-eospark-api",
-  "version": "0.1.2",
+  "version": "0.0.1",
   "description": "EOSpark API for Node.js",
   "main": "./src/index.js",
   "scripts": {
     "test": "jest --coverage",
     "test:watch": "jest --watchAll --coverage",
     "doc": "jsdoc2md --files src/index.js --template docs/template.hbs > docs/API.md",
-    "start": "src/index.js"
+    "checker": "node ./src/index.js"
   },
   "types": "index.d.ts",
   "jest": {

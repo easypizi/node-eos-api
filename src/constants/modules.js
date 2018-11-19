@@ -1,6 +1,6 @@
 module.exports = {
-  ACCOUNT: "account",
-  CONTRACT: "contract",
-  BLOCK: "block",
-  TRANSACTION: "transaction"
-};
+  ACCOUNT:     'account',
+  CONTRACT:    'contract',
+  BLOCK:       'block',
+  TRANSACTION: 'transaction'
+}
