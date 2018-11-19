@@ -1,10 +1,5 @@
-// const BigNumber = require("bignumber.js");
 const MODULES = require('./constants/modules')
 const ACTIONS = require('./constants/actions')
-// const UNITS = require("./constants/units");
-// const NETWORKS = require("./constants/networks");
-// const etherConvert = require("./utils/etherConvert");
-const getHex = require('./utils/getHex')
 const createRequest = require('./utils/createRequest')
 
 class EosParkApi {
@@ -242,10 +237,3 @@ class EosParkApi {
 }
 
 module.exports = EosParkApi
-
-const test = () => {
-  let newAcc = new EosParkApi('968263cca8f228293ed9dcd909e87b5d')
-  newAcc.getAccountInfo('pidor')
-}
-
-test()

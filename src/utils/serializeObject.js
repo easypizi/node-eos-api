@@ -7,14 +7,14 @@ function serializeObject(obj) {
   return Object.keys(obj)
     .map(key => {
       if (obj[key] == null || obj[key] === false) {
-        return false;
+        return false
       }
       if (obj[key] === true) {
-        return key;
+        return key
       }
-      return `${key}=${encodeURIComponent(obj[key])}`;
+      return `${key}=${encodeURIComponent(obj[key])}`
     })
     .filter(Boolean)
-    .join("&");
+    .join('&')
 }
-module.exports = serializeObject;
+module.exports = serializeObject
