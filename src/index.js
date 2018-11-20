@@ -116,19 +116,22 @@ class EosparkConnect {
    * Get the token transfer records of account.
    * @param {string} account Account
    * @param {number} page Page number
-   * @param {string} symbol	Token name
-   * @param {string} code	Issue account
+   * @param {string} isSymbol	Token name
+   * @param {string} isCode	Issue account
    * @param {number} size Number of records per page
    * @returns {Promise<string>}
    */
 
-  getAccountTx(account, symbol = '', code = '', page = 1, size = 200) {
+  getAccountTx(account, symbol = 'EOS', code = '', page = 1, size = 200) {
+    let isSymbol = symbol === '' ? null : symbol
+    let isCode = code === '' ? null : code
+
     return this._createRequest({
       module: MODULES.ACCOUNT,
       action: ACTIONS.GET_ACCOUNTS_TRANSACTIONS,
       account,
-      symbol,
-      code,
+      isSymbol,
+      isCode,
       page,
       size
     }).then(resp => {
@@ -142,11 +145,11 @@ class EosparkConnect {
    * @returns {Promise<string>}
    */
 
-  getBlock(block_num) {
+  getBlock(blockNum) {
     return this._createRequest({
       module: MODULES.BLOCK,
       action: ACTIONS.GET_BLOCK,
-      block_num
+      blockNum
     }).then(resp => {
       return resp
     })
@@ -207,12 +210,12 @@ class EosparkConnect {
    * @returns {Promise<string>}
    */
 
-  getContractTransactions(account, action_name, page = 1, size = 20) {
+  getContractTransactions(account, actionName, page = 1, size = 20) {
     return this._createRequest({
       module: MODULES.CONTRACT,
       action: ACTIONS.GET_CONTRACT_TRANSACTIONS,
       account,
-      action_name,
+      actionName,
       page,
       size
     }).then(resp => {
@@ -225,11 +228,11 @@ class EosparkConnect {
    * @param {string} trx_id transaction ID
    * @returns {Promise<string>}
    */
-  getTransaction(trx_id) {
+  getTransaction(trxId) {
     return this._createRequest({
       module: MODULES.TRANSACTION,
       action: ACTIONS.GET_TRANSACTION,
-      trx_id
+      trxId
     }).then(resp => {
       return resp
     })
